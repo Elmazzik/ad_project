@@ -91,4 +91,4 @@ export default {
 		border-top-right-radius: 5px;
 		border-top-left-radius: 5px;
 	}
-</style>
+</style>  
