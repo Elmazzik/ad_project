@@ -55,10 +55,11 @@ export default {
           title: this.title,
           desc: this.description,
           promo: this.promo,
-        };
-        console.log(ad);
+          src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
+        }
+        console.log(ad)
       }
-    },
+    }
   },
 };
 </script>
