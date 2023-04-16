@@ -7,42 +7,44 @@ import LoginView from '../views/Auth/LoginView.vue'
 import RegistrationView from '../views/Auth/RegistrationView.vue'
 import OrdersView from '../views/User/OrdersView.vue'
 
+
 const routes = [
-    {
+  {
     path: '/',
     name: 'home',
     component: HomeView
-    },
-    {
-    path:"/ad/:id",
-    name:"ad",
+  },
+  {
+    path: "/ad/:id",
+    props: true,
+    name: "ad",
     component: AdView
-    },
-    {
-    path:"/list",
-    name:"list",
+  },
+  {
+    path: "/list",
+    name: "list",
     component: AdListView
-    },
-    {
-    path:"/new",
-    name:"newAd",
+  },
+  {
+    path: "/new",
+    name: "newAd",
     component: NewAdView
-    },
-    {
-    path:"/login",
-    name:"login",
+  },
+  {
+    path: "/login",
+    name: "login",
     component: LoginView
-    },
-    {
-    path:"/registration",
+  },
+  {
+    path: "/registration",
     name: "reg",
     component: RegistrationView
-    },
-    {
+  },
+  {
     path: "/orders",
     name: "orders",
     component: OrdersView
-    }
+  }
 ]
 
 const router = createRouter({
