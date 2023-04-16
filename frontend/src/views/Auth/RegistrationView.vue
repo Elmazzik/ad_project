@@ -8,39 +8,21 @@
                     </v-toolbar>
                     <v-card-text>
                         <v-form v-model="valid" ref="form" lazy-validation>
-                            <v-text-field 
-                            prepend-icon="mdi-account" 
-                            name="email" 
-                            label="Email" 
-                            type="email" 
-                            v-model="email"
-                            :rules="emailRules">
+                            <v-text-field prepend-icon="mdi-account" name="email" label="Email" type="email" v-model="email"
+                                :rules="emailRules">
                             </v-text-field>
-                            <v-text-field 
-                            prepend-icon="mdi-lock" 
-                            name="password" 
-                            label="Password" 
-                            type="password" 
-                            v-model="password"
-                            :rules="passwordRules">
+                            <v-text-field prepend-icon="mdi-lock" name="password" label="Password" type="password"
+                                v-model="password" :rules="passwordRules">
                             </v-text-field>
-                            <v-text-field 
-                            prepend-icon="mdi-lock" 
-                            name="confirm-password" 
-                            label="Confirm Password" 
-                            type="password" 
-                            v-model="confirmPassword"
-                            :rules="confirmPasswordRules">
+                            <v-text-field prepend-icon="mdi-lock" name="confirm-password" label="Confirm Password"
+                                type="password" v-model="confirmPassword" :rules="confirmPasswordRules">
                             </v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn 
-                        color="primary"
-                        @click="onsubmit"
-                        :disabled="!valid">
-                        Create Account
+                        <v-btn color="primary" @click="onsubmit" :disabled="!valid">
+                            Create Account
                         </v-btn>
                     </v-card-actions>
                 </v-card>
@@ -77,9 +59,10 @@ export default {
                     email: this.email,
                     password: this.password
                 }
-                console.log(user)
+                this.$store.dispatch('registerUser', user)
             }
         }
+
     }
 } 
 </script>
