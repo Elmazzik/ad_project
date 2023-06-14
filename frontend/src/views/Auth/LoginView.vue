@@ -2,7 +2,6 @@
     <v-container>
         <v-row justify="center">
             <v-col cols="12" sm="8" lg="6">
-
                 <v-card class="elevetion-12">
                     <v-toolbar dark color="primary">
                         <v-toolbar-title>Login</v-toolbar-title>
@@ -51,7 +50,13 @@ export default {
                     email: this.email,
                     password: this.password
                 }
-                console.log(user)
+                this.$store.dispatch('loginUser', user)
+                    .then(() => {
+                        this.$router.push("/")
+                    })
+                    .catch((err) => {
+                        console.log(err.message)
+                    })
             }
         }
     }
