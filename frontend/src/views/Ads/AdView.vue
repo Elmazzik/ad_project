@@ -11,6 +11,7 @@
             </p>
           </v-card-text>
           <v-card-actions>
+            <modal-dialog :ad="ad"></modal-dialog>
             <v-spacer></v-spacer>
             <v-btn class="warning" color="orange">Edit</v-btn>
             <v-btn class="success" color="green">Buy</v-btn>
