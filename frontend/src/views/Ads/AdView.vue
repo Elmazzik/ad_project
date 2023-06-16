@@ -11,7 +11,7 @@
             </p>
           </v-card-text>
           <v-card-actions>
-            <modal-dialog :ad="ad"></modal-dialog>
+            <modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
             <v-spacer></v-spacer>
             <v-btn class="warning" color="orange">Edit</v-btn>
             <v-btn class="success" color="green">Buy</v-btn>
@@ -22,13 +22,17 @@
   </v-container>
 </template>
 <script>
+import EditAdModal from './EditAdModal'
 export default {
-  props: ['id'],
-  computed: {
-    ad() {
-      const id = this.id
-      return this.$store.getters.adById(id)
+    props: ['id'],
+    computed: {
+        ad() {
+            const id = this.id
+            return this.$store.getters.adById(id)
+        }
+    },
+    components: {
+        'modal-dialog': EditAdModal
     }
-  }
 };
 </script>
