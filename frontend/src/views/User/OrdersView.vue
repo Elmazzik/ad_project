@@ -27,24 +27,29 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       orders: [
-                {
-                    id: "123",
-                    name: "Kostya",
-                    phone: "+7(978)000-00-05",
-                    adId: "1",
-                    done: true
-                }
-            ]
+        {
+          id: "123",
+          name: "Kostya",
+          phone: "+7(978)000-00-05",
+          adId: "1",
+          done: true
+        }
+      ]
     }
   },
   methods: {
-        markDone(order) {
-            order.done = !order.done
-            console.log(order.done)
-        }
+    markDone(order) {
+      order.done = !order.done
+      console.log(order.done)
+    }
+  },
+  computed: {
+    ads() {
+      return this.$store.getters.myAds
+    }
   }
 }
 </script>
