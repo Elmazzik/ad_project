@@ -12,6 +12,7 @@
           </v-card-text>
           <v-card-actions>
             <modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
+            <buy-ad-modal :ad="ad"></buy-ad-modal>
             <v-spacer></v-spacer>
             <v-btn class="warning" color="orange">Edit</v-btn>
             <v-btn class="success" color="green">Buy</v-btn>
