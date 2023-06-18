@@ -29,16 +29,12 @@
             <v-spacer></v-spacer>
             <v-btn text :to="'/ad/' + ad.id">Open</v-btn>
             <buy-ad-modal :ad="ad"></buy-ad-modal>
-            <v-btn raised color="primary">
-              Buy
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
-
 <script>
 export default {
   computed: {
